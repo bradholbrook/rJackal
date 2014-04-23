@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: rjackal-dev
+  database: rjackal_dev
 
 test:
   <<: *default
-  database: rjackal-travis-test
+  database: rjackal_travis_test
   username: postgres
   password: 
 

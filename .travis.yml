@@ -4,4 +4,4 @@ rvm:
 addons:
    postgresql: "9.3"
 before_script:
-   - psql -c 'create database rjackal-travis-test;' -U postgres
+   - psql -c 'create database rjackal_travis_test;' -U postgres

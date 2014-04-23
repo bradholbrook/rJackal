@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+#for CI
+gem 'travis'
 
 group :development, :test do
 
@@ -24,6 +26,9 @@ gem 'rspec-rails'
 gem 'guard-rspec'
 gem 'spork'
 gem 'guard-spork'
+
+#for travis
+gem 'rake'
 
 end
 

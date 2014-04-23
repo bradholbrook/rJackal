@@ -12,7 +12,9 @@ development:
 
 test:
   <<: *default
-  database: rjackal-test
+  database: rjackal-travis-test
+  username: postgres
+  password: 
 
 production:
   <<: *default

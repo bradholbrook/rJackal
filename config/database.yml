@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  username: brad
+  password: bwh2783
+
+development:
+  <<: *default
+  database: rjackal-dev
+
+test:
+  <<: *default
+  database: rjackal-test
+
+production:
+  <<: *default
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  post: <%= ENV['RDS_PORT'] %>

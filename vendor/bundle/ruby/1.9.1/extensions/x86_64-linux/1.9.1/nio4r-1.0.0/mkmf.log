@@ -1,0 +1,110 @@
+have_func: checking for rb_thread_blocking_region()... -------------------- yes
+
+"gcc -o conftest -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -Wl,-R/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -L/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -Wl,-R/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -L/home/brad/.rvm/rubies/ruby-1.9.3-p545/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:28: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+--------------------
+
+have_header: checking for sys/select.h... -------------------- yes
+
+"gcc -E -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/select.h>
+/* end */
+
+--------------------
+
+have_header: checking for poll.h... -------------------- yes
+
+"gcc -E -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <poll.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/epoll.h... -------------------- yes
+
+"gcc -E -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/epoll.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/event.h... -------------------- no
+
+"gcc -E -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:23: fatal error: sys/event.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/event.h>
+/* end */
+
+--------------------
+
+have_header: checking for port.h... -------------------- no
+
+"gcc -E -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:18: fatal error: port.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <port.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/resource.h... -------------------- yes
+
+"gcc -E -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/x86_64-linux -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1/ruby/backward -I/home/brad/.rvm/rubies/ruby-1.9.3-p545/include/ruby-1.9.1 -I.     -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/resource.h>
+/* end */
+
+--------------------
+

@@ -23,9 +23,7 @@ group :development, :test do
 gem 'spring'
 # For automated testing
 gem 'rspec-rails'
-gem 'guard-rspec'
-gem 'spork'
-gem 'guard-spork'
+gem 'capybara'
 
 #for travis
 gem 'rake'

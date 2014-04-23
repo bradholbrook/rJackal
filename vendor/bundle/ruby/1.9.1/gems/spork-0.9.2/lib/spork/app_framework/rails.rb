@@ -53,7 +53,7 @@ class Spork::AppFramework::Rails < Spork::AppFramework
       end
     end
     # Spork.trap_method(::AbstractController::Helpers::ClassMethods, :helper)
-    Spork.trap_method(::ActiveModel::Observing::ClassMethods, :instantiate_observers)
+    #Spork.trap_method(::ActiveModel::Observing::ClassMethods, :instantiate_observers)
     Spork.each_run { ActiveRecord::Base.establish_connection rescue nil } if Object.const_defined?(:ActiveRecord)
 
 

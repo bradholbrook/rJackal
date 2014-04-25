@@ -14,7 +14,7 @@ test:
   <<: *default
   database: rjackal_travis_test
   username: postgres
-  password: 
+  password: postgres
 
 production:
   <<: *default

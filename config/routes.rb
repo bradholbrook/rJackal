@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  
+  root 'static_pages#index'
+  get  'pages/index', to: 'static_pages#index', as: 'index'
+  get  'pages/about', to: 'static_pages#about', as: 'about'
+  get  'pages/contact', to: 'static_pages#contact', as: 'contact'
+  
+  devise_for :users
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

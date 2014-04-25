@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RJackal</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet"/>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <%= link_to 'rJackal', root_path, class: 'navbar-brand' %>
+	    </div>
+		<ul class="nav navbar-nav navbar-right">
+			<% if user_signed_in? %>
+				<li>Logged in as <strong><%= current_user.email %></strong>.</li>
+		    	<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+		    	<li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>li>
+			<% else %>
+				<li><%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link'  %></li>
+				<li><%= link_to 'Login', new_user_session_path, :class => 'navbar-link'  %></li>
+			<% end %>
+		</ul>
+	  </div>
+	</nav>
 
-<%= yield %>
+	<% if notice %>
+	  <p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	  <p class="alert alert-danger"><%= alert %></p>
+	<% end %>
 
+		<%= yield %>		
+	</div>
+
+	<div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	    </div>
+	    <div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "About", about_path %></li>
+				<li><%= link_to "Contact", contact_path%></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</div>
 </body>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js" rel="javascript"/>
+
 </html>

@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :users
+
+  if Rails.env.development?
+    get '*path', :to => 'application#not_found'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

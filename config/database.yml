@@ -3,8 +3,8 @@ default: &default
   pool: 5
   timeout: 5000
   encoding: utf8
-  username: brad
-  password: bwh2783
+  username: postgres
+  password: postgres
 
 development:
   <<: *default
@@ -13,8 +13,6 @@ development:
 test:
   <<: *default
   database: rjackal_travis_test
-  username: postgres
-  password: postgres
 
 production:
   <<: *default

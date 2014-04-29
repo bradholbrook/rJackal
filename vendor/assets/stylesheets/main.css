@@ -7,3 +7,7 @@ body{
     table-layout: fixed;
     float:none;
 }
+.bordered
+{
+	border: 1px solid black;
+}

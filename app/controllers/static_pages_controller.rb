@@ -1,3 +1,5 @@
+require 'mechanize'
+
 class StaticPagesController < ApplicationController
   def index
   end

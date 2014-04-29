@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+<%= form_tag(search_path, method: "post") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<div> 
+	<% @links.each do |link| %>
+	<div class="bordered"><p><strong><%= link_to link.text, apartment_create_path(:name => link.text), :method => 'post' %></strong></p></div>
+	<% end %>
+</div>

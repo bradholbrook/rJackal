@@ -1,2 +1,8 @@
 <% provide(:title, "Home") %>
 <h1>Home Page</h1>
+<%= form_tag(search_path, method: "post") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+

@@ -1,19 +1,17 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
-  
-  post '/search', to: 'search#search', as: 'search'
-  get  'apartments/:id' => 'apartments#show', as: 'apartment_show'
-  post 'apartments/:name' => 'apartments#create', as: 'apartment_create'
 
-  get  'pages/index', to: 'static_pages#index', as: 'index'
-  get  'pages/about', to: 'static_pages#about', as: 'about'
-  get  'pages/contact', to: 'static_pages#contact', as: 'contact'
+  resources :apartments, only: [:new, :show, :create]
+  
+  get 'pages/index', to: 'static_pages#index', as: 'index'
+  get 'pages/about', to: 'static_pages#about', as: 'about'
+  get 'pages/contact', to: 'static_pages#contact', as: 'contact'
   
   devise_for :users
 
   get '404', to: 'application#not_found', as: 'not_found'
 
-  get '*path', :to => 'static_pages#index' #'application#not_found'
+  get '*path', :to => 'application#not_found'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

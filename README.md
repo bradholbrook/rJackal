@@ -5,7 +5,7 @@ A website to see, write, and rate apartment reviews from our users and from arou
 
 ## Getting Started Guide
 
-Make sure you have the RVM, Ruby 1.9.3, the latest Rails, PostgreSQL 9.3.2, and the AWS EB CLI isntalled. The following list will point you in the right direction.
+Make sure you have the RVM, Ruby 1.9.3, the latest Rails, PostgreSQL 9.3.2, nodejs, and the AWS EB CLI isntalled. The following list will point you in the right direction.
 
 * [Install Ruby and Rails with RVM](https://www.digitalocean.com/community/articles/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm)
 * [Install Postgres 9.3.2](https://gist.github.com/pyk/8243010)

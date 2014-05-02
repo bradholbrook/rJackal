@@ -1,0 +1,5 @@
+<%= form_tag(new_apartment_path, method: "get") do %>
+  <%= label_tag(:q, "Search Apartments by Name:") %>
+  <%= text_field_tag(:q, params[:q]) %>
+  <%= submit_tag("GO") %>
+<% end %>

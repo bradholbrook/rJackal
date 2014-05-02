@@ -1,0 +1,17 @@
+<% provide :title, "Search" %>
+<h1>New (Search Results)</h1>
+<%= render partial: 'search_form' %>
+<% unless @apartments.nil? %>
+	<% @apartments.each do |apartment| %>
+		<div class="row">
+			<div class="col-lg-12">
+				<%= form_for apartment, url: {action: "create"} do |apartment_form| %>
+					<%= apartment_form.hidden_field :name, :input_html => { :value => apartment.name } %>
+					<ul><li><%= apartment_form.submit apartment.name %></li></ul>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+<% else %>
+<h2>No Results</h2>
+<% end %>

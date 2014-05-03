@@ -13,18 +13,26 @@
 	<nav class="navbar navbar-default" role="navigation">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <%= link_to 'rJackal', root_path, class: 'navbar-brand' %>
+	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#rjackal-collapse">
+	    		<span class="sr-only">Toggle navigation</span>
+	    		<span class="icon-bar"></span>
+	    		<span class="icon-bar"></span>
+	    		<span class="icon-bar"></span>
+	    	</button>
+	        <%= link_to 'rJackal', root_path, class: 'navbar-brand' %>
 	    </div>
-		<ul class="nav navbar-nav navbar-right">
-			<% if user_signed_in? %>
-				<li class="navbar-text">Logged in as <strong><%= current_user.email %></strong>.</li>
-		    	<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-		    	<li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-			<% else %>
-				<li><%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link'  %></li>
-				<li><%= link_to 'Login', new_user_session_path, :class => 'navbar-link'  %></li>
-			<% end %>
-		</ul>
+	    <div class="collapse navbar-collapse" id="rjackal-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<% if user_signed_in? %>
+					<li class="navbar-text">Logged in as <strong><%= current_user.email %></strong>.</li>
+			    	<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+			    	<li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+				<% else %>
+					<li><%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link'  %></li>
+					<li><%= link_to 'Login', new_user_session_path, :class => 'navbar-link'  %></li>
+				<% end %>
+			</ul>
+		</div>
 	  </div>
 	</nav>
 
@@ -51,7 +59,5 @@
 	  </div>
 	</div>
 </body>
-
-  <link href="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js" rel="javascript"/>
-
+	<script src="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
 </html>

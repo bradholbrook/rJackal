@@ -24,6 +24,10 @@ gem 'devise'
 gem 'mechanize'
 gem 'htmlentities'
 
+#for image uploading by url
+gem 'carrierwave-aws'
+gem 'rmagick'
+
 group :development, :test do
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

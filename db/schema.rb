@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20140429034649) do
 
   create_table "apartments", force: true do |t|
     t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "max_bedrooms"
+    t.string   "min_bedrooms"
+    t.integer  "min_price"
+    t.integer  "max_price"
+    t.string   "image_tag"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   resources :apartments, only: [:new, :show, :create]
+  #resources :reviews
   
   get 'pages/index', to: 'static_pages#index', as: 'index'
   get 'pages/about', to: 'static_pages#about', as: 'about'

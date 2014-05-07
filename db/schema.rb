@@ -11,26 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429034649) do
+ActiveRecord::Schema.define(version: 20140503141324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "apartments", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
     t.string   "max_bedrooms"
     t.string   "min_bedrooms"
-    t.integer  "min_price"
-    t.integer  "max_price"
+    t.string   "max_price"
+    t.string   "min_price"
     t.string   "image_tag"
     t.string   "image"
+    t.string   "detail_page"
+    t.string   "address"
+    t.text     "description"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.integer  "apartment_id"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "reviews", ["apartment_id", "created_at"], name: "index_reviews_on_apartment_id_and_created_at", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

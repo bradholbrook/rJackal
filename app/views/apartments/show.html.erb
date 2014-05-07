@@ -1,5 +1,6 @@
 <h1> apartments! </h1>
 <h2> <%= @apartment.name %> </h2>
+<%= image_tag(@apartment.image_url) %>
 <p> city <%= @apartment.city %> </p>
 <p> state <%= @apartment.state %> </p>
 <p> zip <%= @apartment.zip %> </p>
@@ -9,5 +10,9 @@
 <p> minprice <%= @apartment.min_price %> </p>
 <p> maxprice <%= @apartment.max_price %> </p>
 <p> imagetag <%= @apartment.image_tag %> </p>
+<p> address <%= @apartment.address %> </p>
+<p> desc <%= @apartment.description %> </p>
 
-oieshrgoierergh <%= image_tag(@apartment.image_url) %>
+<% @apartment.reviews.each do |thisreview| %>
+	<p> review <%= thisreview.body %> </p>
+<% end %>

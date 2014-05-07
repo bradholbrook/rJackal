@@ -7,16 +7,17 @@
 			<div class="col-lg-12">
 			<%= image_tag(apartment.image_tag, class: 'image-responsive') %>
 				<%= form_for apartment, url: {action: "create"}, :html => { :multipart => true } do |apartment_form| %>
-					<%= apartment_form.hidden_field :name, :input_html => { :value => apartment.name } %>
-					<%= apartment_form.hidden_field :city, :input_html => { :value => apartment.city } %>
-					<%= apartment_form.hidden_field :state, :input_html => { :value => apartment.state } %>
-					<%= apartment_form.hidden_field :zip, :input_html => { :value => apartment.zip } %>
-					<%= apartment_form.hidden_field :phone, :input_html => { :value => apartment.phone } %>
-					<%= apartment_form.hidden_field :max_bedrooms, :input_html => { :value => apartment.max_bedrooms } %>
-					<%= apartment_form.hidden_field :min_bedrooms, :input_html => { :value => apartment.min_bedrooms } %>
-					<%= apartment_form.hidden_field :min_price, :input_html => { :value => apartment.min_price } %>
-					<%= apartment_form.hidden_field :max_price, :input_html => { :value => apartment.max_price } %>
-					<%= apartment_form.hidden_field :image_tag, :input_html => { :value => apartment.image_tag } %>
+					<%= apartment_form.hidden_field :name, :value => apartment.name %>
+					<%= apartment_form.hidden_field :city, :value => apartment.city %>
+					<%= apartment_form.hidden_field :state, :value => apartment.state %>
+					<%= apartment_form.hidden_field :zip, :value => apartment.zip %>
+					<%= apartment_form.hidden_field :phone, :value => apartment.phone %>
+					<%= apartment_form.hidden_field :max_bedrooms, :value => apartment.max_bedrooms %>
+					<%= apartment_form.hidden_field :min_bedrooms, :value => apartment.min_bedrooms %>
+					<%= apartment_form.hidden_field :min_price, :value => apartment.min_price %>
+					<%= apartment_form.hidden_field :max_price, :value => apartment.max_price %>
+					<%= apartment_form.hidden_field :image_tag, :value => apartment.image_tag %>
+					<%= apartment_form.hidden_field :detail_page, :value => apartment.detail_page %>
 					<%= apartment_form.hidden_field :remote_image_url, :value => apartment.image_tag %>
 					<%= link_to_submit( class: 'testing' ) do %>
 						<strong><%= apartment.name %></strong>
